@@ -26,11 +26,34 @@
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
+
+## Prerequisites
+
+- MySQL database server up and running.
+- MySQL user with appropriate privileges.
+- Node.js and npm installed.
+
 ## Installation
+
+# Clone this repository to your local machine.
+# Navigate to the project directory.
 
 ```bash
 $ npm install
 ```
+
+## Configuration
+
+1. Create a `.env` file in the root directory based on the `sample.env` file provided.
+2. Set up the appropriate values for your MySQL user, password, and database name in the `.env` file.
+
+
+## Database Setup
+
+1. Run the following commands to set up the database:
+1. npx prisma generate,
+2. npx prisma db push,
+3. npx prisma db seed,
 
 ## Running the app
 
@@ -58,16 +81,15 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
-## Support
+## Additional Information
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+- The `sample.env` file provides an example of the environment variables needed for the application to work.
+- Ensure that the MySQL server is up and running before starting the backend server.
+- Modify the `.env` file as needed for your specific environment and database settings.
+- If you don't change the default port (indicated in main.ts as 3001) to another number, api documentation can be found at http://localhost:3001/docs
 
-## Stay in touch
+## Support and Issues
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+If you encounter any issues or need assistance, feel free to open an issue on this repository.
 
-## License
 
-Nest is [MIT licensed](LICENSE).
