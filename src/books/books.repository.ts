@@ -1,5 +1,3 @@
-/* eslint-disable prettier/prettier */
-// src/books/books.repository.ts
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
 import { Book } from './books.entity';

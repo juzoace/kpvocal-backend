@@ -1,5 +1,5 @@
 import { Controller, Get, Query, ParseIntPipe } from '@nestjs/common';
-import { ApiTags } from '@nestjs/swagger';
+import { ApiOperation, ApiTags } from '@nestjs/swagger';
 import { BooksService } from './books.service';
 import { Book } from './books.entity';
 
@@ -9,6 +9,7 @@ export class BooksController {
   constructor(private booksService: BooksService) {}
 
   @Get('all')
+  @ApiOperation({ summary: 'Fetch all books' })
   async getBooks(
     @Query('page') page: number,
     @Query('pageSize', ParseIntPipe) pageSize: string,

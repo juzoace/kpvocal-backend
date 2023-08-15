@@ -18,6 +18,6 @@
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts"], // Include TypeScript source files and declaration files
-  "exclude": ["node_modules", "dist"]
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/.eslintrc.js", "dist/**/*.d.ts", "dist/**/*.js.map", "dist/**/*.js"], // Include TypeScript source files and declaration files
+  "exclude": ["node_modules", "dist", "prisma"]
 }

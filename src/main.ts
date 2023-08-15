@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { AppModule } from './app.module';
@@ -8,10 +7,10 @@ async function bootstrap() {
   app.enableCors({ origin: true });
 
   const swagConfig = new DocumentBuilder()
-  .setTitle('KPVC Test')
-  .setDescription('API Documentation for KPVC test')
-  .setVersion('1.0')
-  .build();
+    .setTitle('KPVC Test')
+    .setDescription('API Documentation for KPVC test')
+    .setVersion('1.0')
+    .build();
 
   app.setGlobalPrefix('api', {
     exclude: [
@@ -20,11 +19,7 @@ async function bootstrap() {
     ],
   });
 
-  SwaggerModule.setup(
-    '/docs',
-    app,
-    SwaggerModule.createDocument(app, swagConfig),
-  );
+  SwaggerModule.setup('/docs', app, SwaggerModule.createDocument(app, swagConfig));
 
   await app.listen(3001);
 }

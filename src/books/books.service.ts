@@ -1,4 +1,3 @@
-// src/books/books.service.ts
 import { Injectable } from '@nestjs/common';
 import { BooksRepository } from './books.repository';
 import { Book } from './books.entity';
