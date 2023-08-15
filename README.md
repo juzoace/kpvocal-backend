@@ -51,9 +51,9 @@ $ npm install
 ## Database Setup
 
 1. Run the following commands to set up the database:
-npx prisma generate
-npx prisma db push
-npx prisma db seed
+1. npx prisma generate
+2. npx prisma db push
+3. npx prisma db seed
 
 ## Running the app
 
