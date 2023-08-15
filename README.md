@@ -86,6 +86,7 @@ $ npm run test:cov
 - The `sample.env` file provides an example of the environment variables needed for the application to work.
 - Ensure that the MySQL server is up and running before starting the backend server.
 - Modify the `.env` file as needed for your specific environment and database settings.
+- If you don't change the default port (indicated in main.ts as 3001) to another number, api documentation can be found at http://localhost:3001/docs
 
 ## Support and Issues
 
