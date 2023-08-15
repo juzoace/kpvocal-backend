@@ -1,0 +1,39 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+model Book {
+  id          Int      @id @default(autoincrement())
+  title       String
+  description String
+  imageUrl    String
+  price       Float
+  discount    Float
+
+  orders      BooksOnOrder[]  // one-to-many relationship
+
+  @@map("book")
+}
+
+model Order {
+  id          Int      @id @default(autoincrement())
+  quantity    Int
+  totalAmount Float
+  // books        Book   @relation(fields: [bookId], references: [id])
+  books BooksOnOrder[]
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt()
+  @@map("order")
+}
+
+model BooksOnOrder {
+  book Book @relation(fields: [bookId], references: [id])
+  bookId Int 
+  order Order @relation(fields: [orderId], references: [id])
+  orderId Int 
+  @@id([bookId, orderId])
+}
